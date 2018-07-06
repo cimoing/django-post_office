@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('from_email', models.CharField(max_length=254, validators=[post_office.validators.validate_email_with_name])),
-                ('to', post_office.fields.CommaSeparatedEmailField(blank=True)),
+                ('to', post_office.fields.CommaSeparatedEmailField(blank=True, db_column='to_email')),
                 ('cc', post_office.fields.CommaSeparatedEmailField(blank=True)),
                 ('bcc', post_office.fields.CommaSeparatedEmailField(blank=True)),
                 ('subject', models.CharField(max_length=255, blank=True)),
